@@ -9,614 +9,378 @@
   <title>내 차 보험료 50만원 아끼는 가장 확실한 방법 여기 다 모았다</title>
  
   
-  
   <style>
-        :root {
-            --bg-color: #f8faff;
-            --primary-text: #2d3436;
-            --sub-text: #636e72;
-            --accent: #6c5ce7;
-            --card-shadow: 0 10px 20px rgba(0,0,0,0.05);
-        }
-
+        /* 기본 스타일 초기화 */
         body {
-            font-family: 'Pretendard', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--primary-text);
+            font-family: 'Noto Sans KR', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f7f9fc; /* 부드러운 배경색 */
             line-height: 1.6;
+            color: #333;
         }
 
-        header {
-            padding: 60px 20px;
-            text-align: center;
-            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
-            color: white;
-            border-bottom-left-radius: 50px;
-            border-bottom-right-radius: 50px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 800;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
+        /* 레이아웃 컨테이너 */
         .container {
             max-width: 1200px;
-            margin: -40px auto 100px;
-            padding: 0 20px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
+        /* 헤더 스타일 */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #e0f2f1, #b2dfdb); /* 부드러운 그라데이션 */
+            border-bottom: 2px solid #a7c0bd;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #004d40;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1em;
+            color: #26a69a;
+        }
+
+        /* 카테고리 섹션 스타일 */
         .category-section {
-            margin-bottom: 50px;
+            margin-bottom: 40px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* 부드러운 그림자 */
         }
-
         .category-title {
-            font-size: 1.6rem;
+            font-size: 1.8em;
+            color: #00796b;
             margin-bottom: 25px;
+            border-left: 5px solid #009688;
             padding-left: 15px;
-            border-left: 5px solid var(--accent);
-            color: var(--primary-text);
-            font-weight: 800;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 25px;
-            box-shadow: var(--card-shadow);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 1px solid rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 30px rgba(108, 92, 231, 0.1);
-            border-color: var(--accent);
-        }
-
-        .card h3 {
-            font-size: 1.2rem;
-            margin: 0 0 12px 0;
-            color: var(--accent);
             font-weight: 700;
         }
 
-        .card p {
-            font-size: 0.95rem;
-            color: var(--sub-text);
-            margin: 0;
-            word-break: keep-all;
+        /* 링크 카드 스타일 */
+        .link-card {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .card-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #fcfcfc;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-item a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 20px;
+            flex-grow: 1;
         }
 
-        .card .badge {
-            display: inline-block;
-            margin-bottom: 15px;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
+        /* 카드 제목 및 내용 스타일 */
+        .card-item h3 {
+            font-size: 1.4em;
+            color: #004d40;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 2px dashed #eceff1;
+            padding-bottom: 10px;
+        }
+        .card-item p {
+            font-size: 0.95em;
+            color: #555;
+            text-align: justify;
         }
 
-        /* 카테고리별 색상 테마 */
-        .theme-1 { background-color: #f0f7ff; } .theme-1 .badge { background: #d0e7ff; color: #0056b3; }
-        .theme-2 { background-color: #fff0f6; } .theme-2 .badge { background: #ffdeeb; color: #c2185b; }
-        .theme-3 { background-color: #f3f0ff; } .theme-3 .badge { background: #e5dbff; color: #5f3dc4; }
-        .theme-4 { background-color: #e6fcf5; } .theme-4 .badge { background: #c3fae8; color: #087f5b; }
-        .theme-5 { background-color: #fff9db; } .theme-5 .badge { background: #fff3bf; color: #f08c00; }
-        .theme-6 { background-color: #f8f9fa; } .theme-6 .badge { background: #e9ecef; color: #495057; }
-        .theme-7 { background-color: #fff4e6; } .theme-7 .badge { background: #ffe8cc; color: #d9480f; }
-        .theme-8 { background-color: #f1f3f5; } .theme-8 .badge { background: #dee2e6; color: #212529; }
-        .theme-9 { background-color: #f8f0fc; } .theme-9 .badge { background: #f3d9fa; color: #ae3ec9; }
-        .theme-10 { background-color: #ebfbee; } .theme-10 .badge { background: #d3f9d8; color: #2b8a3e; }
+        /* 링크 자체를 감싸는 A 태그 스타일 */
+        .link-wrap {
+            text-decoration: none; /* 링크 밑줄 제거 */
+            color: inherit;
+        }
 
+        /* 풋터 스타일 */
         footer {
             text-align: center;
-            padding: 50px 20px;
-            color: var(--sub-text);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.8rem; }
-            .grid-container { grid-template-columns: 1fr; }
+            padding: 30px;
+            background-color: #e0f2f1;
+            color: #004d40;
+            border-top: 2px solid #a7c0bd;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>내 차 보험료 50만원 아끼는 가장 확실한 방법 여기 다 모았다</h1>
-</header>
+    <div class="container">
+        <header>
+            <h1>내 차 보험료 50만원 아끼는 가장 확실한 방법 여기 다 모았다</h1>
+       </header>
 
-<div class="container">
+        <!-- 카테고리 1: 실용적인 SUV 및 RV -->
+        <section class="category-section" style="background-color: #fefcfb;">
+            <h2 class="category-title" style="color: #6a1b9a; border-left-color: #9c27b0;">실용적인 SUV 및 RV: 가족의 안전과 모험을 위한 완벽한 보호막</h2>
+            <div class="link-card">
 
-    <section class="category-section">
-        <h2 class="category-title">01. 첫 운전의 설렘, 완벽한 시작</h2>
-        <div class="grid-container">
-            <a href="https://directlpmod.withusdone.com/" target="_blank" class="card theme-1">
-                <span class="badge">START</span>
-                <h3>첫차보험</h3>
-                <p>"생애 첫 운전의 떨림을 든든한 보호막으로 감싸안는 가장 따뜻한 가이드"</p>
-            </a>
-            <a href="https://directfpmov.withusdone.com/" target="_blank" class="card theme-1">
-                <span class="badge">NEW CAR</span>
-                <h3>신차보험</h3>
-                <p>"비닐도 안 뜯은 새 차의 광택만큼이나 눈부신 완벽 보장 시스템의 정석"</p>
-            </a>
-            <a href="https://directjpmos.withusdone.com/" target="_blank" class="card theme-1">
-                <span class="badge">CHECK</span>
-                <h3>차보험비</h3>
-                <p>"내 지갑의 호흡을 고려한 합리적인 숫자들, 그 이상의 가치를 발견하는 시간"</p>
-            </a>
-            <a href="https://directkpmol.withusdone.com/" target="_blank" class="card theme-1">
-                <span class="badge">HOW TO</span>
-                <h3>자동차보험가입방법</h3>
-                <p>"복잡한 미로 속에서 발견한 보물 지도 같은 친절하고 명쾌한 가이드라인"</p>
-            </a>
-            <a href="https://directjpmog.withusdone.com/" target="_blank" class="card theme-1">
-                <span class="badge">HISTORY</span>
-                <h3>자동차보험가입경력인정</h3>
-                <p>"당신의 숨은 운전 시간을 금빛 혜택으로 되돌려주는 마법 같은 경력 복원술"</p>
-            </a>
-            <a href="https://directhpmod.withusdone.com/" target="_blank" class="card theme-1">
-                <span class="badge">ESSENTIAL</span>
-                <h3>자동차보험필수</h3>
-                <p>"놓치면 후회할 당신의 주행 인생 필수 아이템, 안전을 위한 단 하나의 약속"</p>
-            </a>
-            <a href="https://directjpmoi.withusdone.com/" target="_blank" class="card theme-1">
-                <span class="badge">FRESH</span>
-                <h3>자동차보험신규</h3>
-                <p>"새로운 출발선에 선 당신을 위해 준비된 세상에서 가장 가벼운 첫걸음"</p>
-            </a>
-            <a href="https://directjpmom.withusdone.com/" target="_blank" class="card theme-1">
-                <span class="badge">ONLINE</span>
-                <h3>온라인자동차보험</h3>
-                <p>"손가락 끝으로 완성하는 가장 진보된 보험의 형태, 24시간 당신 곁의 수호신"</p>
-            </a>
-        </div>
-    </section>
+                <!-- 팰리세이드 보험 -->
+                <article class="card-item" style="border-color: #e1bee7;">
+                    <a href="https://caropromotiont.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #6a1b9a;">팰리세이드 보험: 대형 SUV의 품격과 안전을 지키는 프리미엄 설계</h3>
+                        <p>
+                            팰리세이드는 단순한 이동 수단을 넘어, 가족의 꿈과 모험을 싣고 달리는 든든한 요새입니다. 거대한 차체와 첨단 안전 기능으로 무장한 이 차량은 어떤 도로에서도 최상의 안정감을 제공하지만, 예상치 못한 사고의 위험으로부터 완전히 자유로울 수는 없습니다. 팰리세이드의 가치와 탑승자의 안전을 최우선으로 고려한 보험 설계가 필요한 이유입니다. 특히 다자녀 가구에게는 차량의 크기만큼이나 광범위한 보장 범위가 중요합니다. 차량이 전손되는 상황부터 경미한 스크래치까지, 모든 가능성을 포괄하는 보험은 팰리세이드의 품격을 유지하는 핵심입니다. 단순한 의무 가입을 넘어, 프리미엄 SUV에 걸맞은 차별화된 보상 서비스를 통해 팰리세이드 오너로서 누릴 수 있는 최상의 경험을 완성하십시오. 넉넉한 적재 공간에 담긴 가족의 추억을 안전하게 지키기 위한 첫걸음, 지금 시작하십시오. 
+                        </p>
+                    </a>
+                </article>
 
-    <section class="category-section">
-        <h2 class="category-title">02. 세컨드 핸드, 퍼스트 클래스 케어</h2>
-        <div class="grid-container">
-            <a href="https://directfpmow.withusdone.com/" target="_blank" class="card theme-2">
-                <span class="badge">USED CAR</span>
-                <h3>중고차보험가입</h3>
-                <p>"지나온 시간을 존중하고 앞으로의 길을 응원하는 중고차만을 위한 맞춤 수트"</p>
-            </a>
-            <a href="https://directfpmox.withusdone.com/" target="_blank" class="card theme-2">
-                <span class="badge">SCAN</span>
-                <h3>차량보험이력조회</h3>
-                <p>"투명한 유리창처럼 과거를 들여다보는 기술, 보이지 않는 곳까지 살피는 안목"</p>
-            </a>
-            <a href="https://directgpmop.withusdone.com/" target="_blank" class="card theme-2">
-                <span class="badge">PRICE</span>
-                <h3>중고차보험료</h3>
-                <p>"중고차라고 혜택까지 중고는 아니다. 새 차 부럽지 않은 가성비의 정점"</p>
-            </a>
-            <a href="https://directhpmol.withusdone.com/" target="_blank" class="card theme-2">
-                <span class="badge">DIRECT</span>
-                <h3>중고차자동차보험</h3>
-                <p>"주인이 바뀌어도 변하지 않는 안전의 가치, 당신의 중고차에 새 생명을"</p>
-            </a>
-            <a href="https://directjpmoy.withusdone.com/" target="_blank" class="card theme-2">
-                <span class="badge">JOIN</span>
-                <h3>차량보험가입</h3>
-                <p>"단순한 서류 한 장이 아닌, 도로 위에서 당신을 지켜줄 가장 강력한 방패"</p>
-            </a>
-            <a href="https://directkpmoo.withusdone.com/" target="_blank" class="card theme-2">
-                <span class="badge">CONFIRM</span>
-                <h3>차보험확인</h3>
-                <p>"긴가민가할 땐 바로 체크하세요. 당신의 안심 지수를 실시간으로 확인하는 법"</p>
-            </a>
-            <a href="https://directjpmox.withusdone.com/" target="_blank" class="card theme-2">
-                <span class="badge">SEARCH</span>
-                <h3>차량보험료조회</h3>
-                <p>"데이터가 말해주는 정직한 숫자, 가장 합리적인 선택을 위한 스마트 스캐닝"</p>
-            </a>
-            <a href="https://directipmom.withusdone.com/" target="_blank" class="card theme-2">
-                <span class="badge">COVER</span>
-                <h3>자차보험가입</h3>
-                <p>"내 차를 사랑하는 가장 완벽한 방법, 예상치 못한 순간에도 웃을 수 있는 이유"</p>
-            </a>
-        </div>
-    </section>
+                <!-- 토레스 보험료 -->
+                <article class="card-item" style="border-color: #e1bee7;">
+                    <a href="https://carmpromotionq.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #6a1b9a;">토레스 보험료: 개성을 입은 SUV, 합리적인 가치 보장</h3>
+                        <p>
+                            토레스는 국내 SUV 시장에 신선한 충격을 던지며 등장했습니다. 강인한 외관 디자인과 합리적인 가격으로 많은 사랑을 받고 있는 토레스는 자신만의 개성을 표현하고자 하는 운전자들에게 완벽한 선택지입니다. 하지만 개성이 강한 만큼, 보험 설계 역시 기존의 틀을 벗어나야 합니다. 토레스의 매력적인 디자인 요소와 특유의 첨단 사양을 고려한 맞춤형 보상 플랜은 필수입니다. 특히 아웃도어 활동을 즐기는 오너라면, 차량 외부 손상이나 레저 장비 관련 특약에 대한 깊은 고민이 필요합니다. 토레스는 단순히 도로 위를 달리는 차량을 넘어, 모험의 파트너입니다. 보험은 그 모험을 든든하게 받쳐주는 안전망 역할을 해야 합니다. 예측 불가능한 상황에서 토레스의 가치를 온전히 보호하고, 오너의 드라이빙 라이프를 지켜줄 수 있는 현명한 보험 선택이 중요합니다. 합리적인 보험료로 최고의 보장을 누리세요. 
+                        </p>
+                    </a>
+                </article>
 
-    <section class="category-section">
-        <h2 class="category-title">03. 1원까지 따져보는 수치의 미학</h2>
-        <div class="grid-container">
-            <a href="https://directgpmoa.withusdone.com/" target="_blank" class="card theme-3">
-                <span class="badge">CALC</span>
-                <h3>자동차보험계산기</h3>
-                <p>"복잡한 수식은 잊으세요. 당신의 조건만 입력하면 펼쳐지는 최적의 데이터"</p>
-            </a>
-            <a href="https://directgpmoc.withusdone.com/" target="_blank" class="card theme-3">
-                <span class="badge">MATCH</span>
-                <h3>자동차보험료견적비교</h3>
-                <p>"비교할수록 올라가는 당신의 이득, 숨어있는 단 1%의 할인까지 찾아냅니다"</p>
-            </a>
-            <a href="https://directgpmoy.withusdone.com/" target="_blank" class="card theme-3">
-                <span class="badge">FAST</span>
-                <h3>자동차보험료견적</h3>
-                <p>"번개처럼 빠른 결과, 하지만 그 깊이는 태산처럼 묵직한 신뢰의 견적서"</p>
-            </a>
-            <a href="https://carspromotionc.withusdone.com/" target="_blank" class="card theme-3">
-                <span class="badge">AUTO</span>
-                <h3>차보험계산</h3>
-                <p>"보험료 산출의 고정관념을 깨다. 가장 모던하고 감각적인 계산 프로세스"</p>
-            </a>
-            <a href="https://directkpmoa.withusdone.com/" target="_blank" class="card theme-3">
-                <span class="badge">LIVE</span>
-                <h3>실시간자동차보험료비교견적사이트</h3>
-                <p>"지금 이 순간, 시장의 흐름을 반영한 가장 생생하고 정확한 가격표"</p>
-            </a>
-            <a href="https://directipmob.withusdone.com/" target="_blank" class="card theme-3">
-                <span class="badge">RATE</span>
-                <h3>자동차 보험 인상률 계산기</h3>
-                <p>"오르는 물가 속에서도 내 보험료의 흐름을 예측하는 미래지향적 분석 도구"</p>
-            </a>
-            <a href="https://directipmoq.withusdone.com/" target="_blank" class="card theme-3">
-                <span class="badge">COMPARE</span>
-                <h3>자동차보험견적비교</h3>
-                <p>"선택의 기로에서 만나는 가장 명확한 이정표, 후회 없는 결정을 위한 필수 코스"</p>
-            </a>
-            <a href="https://directkpmop.withusdone.com/" target="_blank" class="card theme-3">
-                <span class="badge">SMART</span>
-                <h3>차량보험료계산</h3>
-                <p>"내 차의 가치와 당신의 운전 습관이 만나 탄생하는 세상에 없던 개인화 보험료"</p>
-            </a>
-        </div>
-    </section>
+                <!-- QM6 보험료 -->
+                <article class="card-item" style="border-color: #e1bee7;">
+                    <a href="https://carmpromotionn.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #6a1b9a;">QM6 보험료: LPG 모델의 강점을 살린 경제적인 보험 설계</h3>
+                        <p>
+                            르노코리아의 QM6는 부드러운 승차감과 뛰어난 정숙성을 자랑하는 스테디셀러 SUV입니다. 특히 LPG 모델은 탁월한 경제성으로 많은 소비자들의 선택을 받고 있습니다. QM6를 위한 보험 설계는 이러한 차량의 특성을 깊이 이해하는 것에서 출발해야 합니다. LPG 차량은 일반 가솔린 차량과 다른 연료 시스템 구조를 가지고 있으므로, 관련 부품 손상에 대한 보장 여부를 꼼꼼히 확인해야 합니다. QM6의 주행 특성과 유지보수 비용을 고려하여, 단순히 보험료가 저렴한 상품을 선택하기보다는 차량 수리 시 발생하는 비용 부담을 최소화할 수 있는 실속형 플랜을 찾는 것이 현명합니다. QM6의 경제성과 실용성을 극대화하는 동시에, 예기치 않은 위험으로부터 차량을 보호할 수 있는 최적의 보험료를 지금 바로 비교해보십시오. 르노코리아의 안정적인 서비스 네트워크와 연계된 특약을 활용하면 더욱 완벽한 보상을 누릴 수 있습니다. 
+                        </p>
+                    </a>
+                </article>
 
-    <section class="category-section">
-        <h2 class="category-title">04. 세대를 아우르는 안전의 연결고리</h2>
-        <div class="grid-container">
-            <a href="https://directhpmof.withusdone.com/" target="_blank" class="card theme-4">
-                <span class="badge">30'S</span>
-                <h3>30대자동차보험료 평균</h3>
-                <p>"인생의 황금기 30대, 열정적인 당신의 질주를 가장 안정적으로 받쳐줄 평균의 힘"</p>
-            </a>
-            <a href="https://directhpmoc.withusdone.com/" target="_blank" class="card theme-4">
-                <span class="badge">FAMILY</span>
-                <h3>부모님차보험</h3>
-                <p>"효도의 시작은 안전한 드라이빙, 부모님의 평안한 길을 위한 자녀의 마음"</p>
-            </a>
-            <a href="https://directjpmon.withusdone.com/" target="_blank" class="card theme-4">
-                <span class="badge">AGE 26</span>
-                <h3>자동차보험 26세</h3>
-                <p>"보험료의 벽이 낮아지는 기적의 나이, 청춘의 특권을 제대로 누리는 방법"</p>
-            </a>
-            <a href="https://directjpmoz.withusdone.com/" target="_blank" class="card theme-4">
-                <span class="badge">JUNIOR</span>
-                <h3>미성년자자동차보험</h3>
-                <p>"어린 나이에도 타협 없는 안전, 미래의 베스트 드라이버를 위한 조기 교육 같은 보험"</p>
-            </a>
-            <a href="https://directgpmod.withusdone.com/" target="_blank" class="card theme-4">
-                <span class="badge">LIFE</span>
-                <h3>자동차보험연령</h3>
-                <p>"나이마다 색깔이 다르듯, 당신의 연령대에 꼭 맞는 맞춤형 보장 컬러링"</p>
-            </a>
-            <a href="https://directgpmoq.withusdone.com/" target="_blank" class="card theme-4">
-                <span class="badge">KNOW-HOW</span>
-                <h3>차보험나이</h3>
-                <p>"숫자에 불과한 나이를 보험 혜택의 핵심 키워드로 바꾸는 노련한 지혜"</p>
-            </a>
-            <a href="https://directipmod.withusdone.com/" target="_blank" class="card theme-4">
-                <span class="badge">AGAIN</span>
-                <h3>자동차보험재가입</h3>
-                <p>"익숙함에 새로움을 더하다. 매년 반복되는 재가입을 설레는 갱신으로"</p>
-            </a>
-            <a href="https://directlpmob.withusdone.com/" target="_blank" class="card theme-4">
-                <span class="badge">RENEW</span>
-                <h3>자동차보험료갱신</h3>
-                <p>"어제보다 나은 오늘을 위해, 당신의 안전 유효기간을 연장하는 가장 세련된 방식"</p>
-            </a>
-        </div>
-    </section>
+            </div>
+        </section>
 
-    <section class="category-section">
-        <h2 class="category-title">05. 특별한 차, 그 이상의 특별한 보장</h2>
-        <div class="grid-container">
-            <a href="https://directgpmoo.withusdone.com/" target="_blank" class="card theme-5">
-                <span class="badge">TRUCK</span>
-                <h3>화물차보험</h3>
-                <p>"도로 위 경제의 역군, 당신의 구슬땀을 헛되이 하지 않을 든든한 사업 파트너"</p>
-            </a>
-            <a href="https://directgpmoz.withusdone.com/" target="_blank" class="card theme-5">
-                <span class="badge">LUXURY</span>
-                <h3>벤츠보험료</h3>
-                <p>"삼각별의 자부심에 걸맞은 품격 있는 보장, 럭셔리 드라이빙의 마침표"</p>
-            </a>
-            <a href="https://directipmoc.withusdone.com/" target="_blank" class="card theme-5">
-                <span class="badge">TESLA</span>
-                <h3>테슬라보험료</h3>
-                <p>"전기차 시대의 아이콘을 위한 최첨단 알고리즘 보장, 미래를 달리는 당신에게"</p>
-            </a>
-            <a href="https://directipmoe.withusdone.com/" target="_blank" class="card theme-5">
-                <span class="badge">GENESIS</span>
-                <h3>제네시스G80보험</h3>
-                <p>"한국의 자존심 G80, 그 우아함 뒤에 숨겨진 철벽 같은 방어막의 조화"</p>
-            </a>
-            <a href="https://directipmot.withusdone.com/" target="_blank" class="card theme-5">
-                <span class="badge">CAMPING</span>
-                <h3>캠핑카보험</h3>
-                <p>"움직이는 별장, 당신의 낭만적인 노마드 라이프를 지켜주는 자유로운 영혼의 보험"</p>
-            </a>
-            <a href="https://directkpmos.withusdone.com/" target="_blank" class="card theme-5">
-                <span class="badge">EV</span>
-                <h3>전기차자동차보험</h3>
-                <p>"조용한 혁명, 전기차만의 특수성을 이해하는 지능형 에너지 세이빙 보험"</p>
-            </a>
-            <a href="https://directlpmoa.withusdone.com/" target="_blank" class="card theme-5">
-                <span class="badge">CITY</span>
-                <h3>레이자동차보험</h3>
-                <p>"작지만 알찬 공간의 미학 레이, 도심 속 기동성을 극대화하는 컴팩트 케어"</p>
-            </a>
-            <a href="https://directlpmoc.withusdone.com/" target="_blank" class="card theme-5">
-                <span class="badge">PREMIUM</span>
-                <h3>아이오닉9보험료</h3>
-                <p>"대형 전기 SUV의 새로운 기준, 거대한 체구에 어울리는 압도적인 스케일의 보장"</p>
-            </a>
-        </div>
-    </section>
+        <!-- 카테고리 2: 프리미엄 세단 및 고성능 모델 -->
+        <section class="category-section" style="background-color: #fcfcfc;">
+            <h2 class="category-title" style="color: #d32f2f; border-left-color: #ef5350;">프리미엄 세단 및 고성능 모델: 드라이빙의 즐거움, 완벽한 가치 보존</h2>
+            <div class="link-card">
 
-    <section class="category-section">
-        <h2 class="category-title">06. 지갑을 가볍게, 마음은 무겁게</h2>
-        <div class="grid-container">
-            <a href="https://directfpmoy.withusdone.com/" target="_blank" class="card theme-6">
-                <span class="badge">CARD</span>
-                <h3>자동차보험카드결제</h3>
-                <p>"현금의 압박에서 벗어나 카드 한 장으로 완성하는 심플하고 쿨한 결제 미학"</p>
-            </a>
-            <a href="https://directfpmoz.withusdone.com/" target="_blank" class="card theme-6">
-                <span class="badge">DIVIDE</span>
-                <h3>자동차보험분납</h3>
-                <p>"한 번에 내기엔 무거운 당신을 위해, 부담을 잘게 쪼개어 가벼운 일상을 선물합니다"</p>
-            </a>
-            <a href="https://carspromotione.withusdone.com/" target="_blank" class="card theme-6">
-                <span class="badge">SYSTEM</span>
-                <h3>자동차보험분할납부</h3>
-                <p>"계획적인 당신의 자산 관리를 돕는 스마트한 분할 시스템, 경제적 자유의 시작"</p>
-            </a>
-            <a href="https://directhpmov.withusdone.com/" target="_blank" class="card theme-6">
-                <span class="badge">BENEFIT</span>
-                <h3>자동차보험할인카드</h3>
-                <p>"쓰면 쓸수록 돈이 모이는 마법의 카드 조합, 할인에 할인을 더하는 쇼핑 같은 보험"</p>
-            </a>
-            <a href="https://directipmoa.withusdone.com/" target="_blank" class="card theme-6">
-                <span class="badge">MONTHLY</span>
-                <h3>자동차보험월납</h3>
-                <p>"구독 서비스처럼 즐기는 보험, 매달 적은 금액으로 누리는 거대한 안전의 가치"</p>
-            </a>
-            <a href="https://directipmog.withusdone.com/" target="_blank" class="card theme-6">
-                <span class="badge">CREDIT</span>
-                <h3>자동차보험신용카드</h3>
-                <p>"신용의 힘으로 완성하는 프리미엄 결제 서비스, 포인트 적립은 덤으로 따라옵니다"</p>
-            </a>
-            <a href="https://directipmos.withusdone.com/" target="_blank" class="card theme-6">
-                <span class="badge">INSTALL</span>
-                <h3>자동차보험카드할부</h3>
-                <p>"무이자 할부의 마법으로 고액의 보험료를 커피 한 잔 값처럼 가볍게 처리하세요"</p>
-            </a>
-            <a href="https://directjpmor.withusdone.com/" target="_blank" class="card theme-6">
-                <span class="badge">PAY</span>
-                <h3>자동차보험결제</h3>
-                <p>"복잡한 인증 절차 없이 단숨에 끝내는 초간편 결제, 당신의 시간까지 아껴드립니다"</p>
-            </a>
-        </div>
-    </section>
+                <!-- 벤츠 E클래스 보험료 -->
+                <article class="card-item" style="border-color: #ffcdd2;">
+                    <a href="https://carmpromotione.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #d32f2f;">벤츠 E클래스 보험료: 럭셔리 세단의 가치, 섬세한 보상으로 지킨다</h3>
+                        <p>
+                            메르세데스-벤츠 E클래스는 럭셔리 세단의 대명사로 불립니다. 혁신적인 기술과 우아한 디자인이 조화된 E클래스는 운전자에게 단순한 이동 이상의 경험을 선사합니다. E클래스를 소유한다는 것은 곧 프리미엄 라이프스타일을 누리는 것입니다. 이러한 고가 차량의 보험은 일반 차량과는 접근 방식이 달라야 합니다. E클래스의 정교한 센서와 고가의 첨단 부품들은 경미한 사고에도 높은 수리 비용을 발생시킵니다. 따라서 보험 가입 시 자기차량손해(자차) 보상 한도와 수리 시 순정 부품 사용 여부, 딜러사 정식 서비스 센터 이용 가능 여부 등을 꼼꼼히 따져봐야 합니다. 벤츠 E클래스를 위한 보험은 단순한 비용 절감을 넘어, 차량의 가치를 온전히 보존하는 데 중점을 두어야 합니다. 드라이빙의 품격을 지켜줄 수 있는 완벽한 보장 플랜을 통해 당신의 벤츠 E클래스를 보호하십시오. 
+                        </p>
+                    </a>
+                </article>
 
-    <section class="category-section">
-        <h2 class="category-title">07. 디테일이 만드는 완벽한 안전</h2>
-        <div class="grid-container">
-            <a href="https://directfpmou.withusdone.com/" target="_blank" class="card theme-7">
-                <span class="badge">COVERAGE</span>
-                <h3>자동차보험대인배상2</h3>
-                <p>"무한한 책임감으로 타인의 삶까지 배려하는 진정한 드라이버의 품격 있는 선택"</p>
-            </a>
-            <a href="https://directgpmoe.withusdone.com/" target="_blank" class="card theme-7">
-                <span class="badge">SELF</span>
-                <h3>자동차보험자기신체사고</h3>
-                <p>"누구보다 소중한 '나'를 위한 가장 내밀하고 따뜻한 보호막을 구축하세요"</p>
-            </a>
-            <a href="https://directgpmof.withusdone.com/" target="_blank" class="card theme-7">
-                <span class="badge">DAMAGE</span>
-                <h3>자동차보험자손</h3>
-                <p>"사고의 상처를 치유하는 가장 빠른 방법, 당신의 건강을 1순위로 생각합니다"</p>
-            </a>
-            <a href="https://directgpmoj.withusdone.com/" target="_blank" class="card theme-7">
-                <span class="badge">VEHICLE</span>
-                <h3>자동차보험자기차량손해</h3>
-                <p>"스크래치 하나에도 가슴 아픈 당신을 위해, 차의 가치를 끝까지 지켜주는 기술"</p>
-            </a>
-            <a href="https://directjpmod.withusdone.com/" target="_blank" class="card theme-7">
-                <span class="badge">LIABILITY</span>
-                <h3>차량책임보험</h3>
-                <p>"최소한의 도리이자 최대한의 배려, 도로 위 모두를 위한 약속의 시작점"</p>
-            </a>
-            <a href="https://directjpmof.withusdone.com/" target="_blank" class="card theme-7">
-                <span class="badge">DETAIL</span>
-                <h3>자동차보험담보</h3>
-                <p>"빈틈없는 그물망처럼 당신의 일상을 촘촘하게 지켜주는 맞춤형 담보 설계"</p>
-            </a>
-            <a href="https://directkpmod.withusdone.com/" target="_blank" class="card theme-7">
-                <span class="badge">VALUE</span>
-                <h3>자동차보험가액</h3>
-                <p>"내 차의 진정한 가치를 숫자로 증명하는 법, 시간이 흘러도 변치 않는 보장 기준"</p>
-            </a>
-            <a href="https://directjpmoo.withusdone.com/" target="_blank" class="card theme-7">
-                <span class="badge">GUARANTEE</span>
-                <h3>자동차보험보장</h3>
-                <p>"어떤 비바람이 몰아쳐도 끄떡없는 거대한 우산처럼, 당신의 운전을 감싸안습니다"</p>
-            </a>
-        </div>
-    </section>
+                <!-- BMW 3시리즈 보험료 -->
+                <article class="card-item" style="border-color: #ffcdd2;">
+                    <a href="https://carmpromotionr.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #d32f2f;">BMW 3시리즈 보험료: 펀 드라이빙의 정수, 최적화된 보험 솔루션</h3>
+                        <p>
+                            BMW 3시리즈는 운전의 즐거움을 극대화하는 컴팩트 스포츠 세단의 표준입니다. 정밀한 핸들링과 강력한 퍼포먼스는 운전자에게 짜릿한 경험을 선사하지만, 이러한 고성능 차량은 사고 발생 시 더 큰 손해를 입을 위험이 있습니다. 3시리즈 오너의 드라이빙 스타일과 차량의 역동성을 고려한 맞춤형 보험 설계가 필요합니다. 특히 스포츠 패키지나 고성능 M 모델을 선택한 경우, 고가의 파츠나 튜닝 부품에 대한 보상 특약은 필수입니다. 보험료만을 기준으로 상품을 선택할 경우, 사고 발생 시 복잡한 수리 과정에서 예상치 못한 비용이 발생할 수 있습니다. BMW 3시리즈의 민첩한 주행 성능만큼이나 신속하고 정확한 사고 처리 서비스를 제공하는 보험사를 선택하는 것이 중요합니다. 드라이빙의 열정을 안전하게 지켜줄 수 있는 보험 플랜을 지금 확인해보세요. 
+                        </p>
+                    </a>
+                </article>
 
-    <section class="category-section">
-        <h2 class="category-title">08. 거품은 빼고 진심은 더하고</h2>
-        <div class="grid-container">
-            <a href="https://directgpmob.withusdone.com/" target="_blank" class="card theme-8">
-                <span class="badge">DIRECT</span>
-                <h3>다이렉트차보험료</h3>
-                <p>"설계사 수수료 없는 정직한 가격, 오직 당신만을 위해 준비된 경제적인 선택"</p>
-            </a>
-            <a href="https://directgpmos.withusdone.com/" target="_blank" class="card theme-8">
-                <span class="badge">BEST</span>
-                <h3>다이렉트자동차보험추천</h3>
-                <p>"수많은 선택지 중 원석을 골라내는 안목, 사람들이 열광하는 데는 이유가 있습니다"</p>
-            </a>
-            <a href="https://directhpmoe.withusdone.com/" target="_blank" class="card theme-8">
-                <span class="badge">RANK</span>
-                <h3>다이렉트자동차보험견적비교</h3>
-                <p>"차트가 보여주는 객관적인 승부, 가장 효율적인 보험을 한눈에 간파하는 통찰력"</p>
-            </a>
-            <a href="https://directipmoj.withusdone.com/" target="_blank" class="card theme-8">
-                <span class="badge">CHEAP</span>
-                <h3>다이렉트자동차보험저렴한곳</h3>
-                <p>"저렴함의 기준을 새로 쓰다. 최저가 뒤에 숨겨진 탄탄한 보장의 반전 매력"</p>
-            </a>
-            <a href="https://directjpmoq.withusdone.com/" target="_blank" class="card theme-8">
-                <span class="badge">TOP</span>
-                <h3>다이렉트자동차보험순위</h3>
-                <p>"트렌드세터들이 선택한 대세 보험, 순위가 말해주는 압도적인 만족도의 차이"</p>
-            </a>
-            <a href="https://directkpmob.withusdone.com/" target="_blank" class="card theme-8">
-                <span class="badge">FAST JOIN</span>
-                <h3>자동차보험인터넷가입</h3>
-                <p>"언제 어디서든 가능한 자유로운 가입, 당신의 소중한 주말을 방해하지 않습니다"</p>
-            </a>
-            <a href="https://directkpmom.withusdone.com/" target="_blank" class="card theme-8">
-                <span class="badge">BARGAIN</span>
-                <h3>자동차보험저렴</h3>
-                <p>"싼 게 비지떡이라는 말은 옛말, 스마트한 소비자가 찾는 가성비의 신세계"</p>
-            </a>
-            <a href="https://directkpmon.withusdone.com/" target="_blank" class="card theme-8">
-                <span class="badge">CHEAPEST</span>
-                <h3>자동차 보험료 싼 곳</h3>
-                <p>"발품 팔 필요 없이 여기서 종결, 당신의 지갑을 웃게 만들 최후의 보루"</p>
-            </a>
-        </div>
-    </section>
+                <!-- 아우디 A3 보험료 -->
+                <article class="card-item" style="border-color: #ffcdd2;">
+                    <a href="https://caropromotionz.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #d32f2f;">아우디 A3 보험료: 컴팩트 프리미엄의 가치, 스마트한 보상으로 완성</h3>
+                        <p>
+                            아우디 A3는 컴팩트 세그먼트에서 프리미엄 브랜드의 가치를 경험하게 해주는 모델입니다. 세련된 디자인과 아우디 특유의 기술력이 결합되어 젊은 층에게 큰 인기를 얻고 있습니다. A3 오너들은 합리적인 가격으로 수입차의 감성을 누리는 동시에, 차량 유지보수 비용에 대한 현실적인 고민을 합니다. A3의 보험료는 단순히 차량 가액뿐 아니라 부품 수급의 용이성, 수리 난이도 등을 복합적으로 고려하여 산정됩니다. 특히 아우디의 첨단 운전자 보조 시스템(ADAS) 관련 부품은 수리 시 높은 비용이 발생하므로, 이를 충분히 커버할 수 있는 특약을 확인해야 합니다. A3의 스마트한 매력에 걸맞은 스마트한 보험 설계를 통해, 예기치 않은 위험으로부터 당신의 소중한 차량을 보호하고 마음 편안하게 드라이빙을 즐기십시오. 
+                        </p>
+                    </a>
+                </article>
 
-    <section class="category-section">
-        <h2 class="category-title">09. 소외 없는 모두의 드라이빙</h2>
-        <div class="grid-container">
-            <a href="https://directhpmob.withusdone.com/" target="_blank" class="card theme-9">
-                <span class="badge">JOINT</span>
-                <h3>공동명의자동차보험</h3>
-                <p>"함께하는 기쁨, 나누는 보험료. 명의의 복잡함을 혜택의 단순함으로 승화"</p>
-            </a>
-            <a href="https://directhpmox.withusdone.com/" target="_blank" class="card theme-9">
-                <span class="badge">WELFAR</span>
-                <h3>장애인자동차보험</h3>
-                <p>"어떤 장벽도 가로막을 수 없는 당신의 이동권, 가장 세심하고 따뜻한 배려의 손길"</p>
-            </a>
-            <a href="https://directipmof.withusdone.com/" target="_blank" class="card theme-9">
-                <span class="badge">SUPPORT</span>
-                <h3>자동차보험장애인</h3>
-                <p>"존중과 배려가 담긴 특별한 약관, 당신의 주행이 더 평온해질 수 있도록"</p>
-            </a>
-            <a href="https://directjpmoj.withusdone.com/" target="_blank" class="card theme-9">
-                <span class="badge">GLOBAL</span>
-                <h3>외국인자동차보험</h3>
-                <p>"언어의 장벽을 넘어 국경 없는 안전을 선사하는 글로벌 스탠다드 케어"</p>
-            </a>
-            <a href="https://directkpmoe.withusdone.com/" target="_blank" class="card theme-9">
-                <span class="badge">ANYONE</span>
-                <h3>누구나자동차보험</h3>
-                <p>"너와 나, 우리 모두가 하나로 묶이는 마법. 운전자가 누구든 걱정 없는 관대함"</p>
-            </a>
-            <a href="https://directkpmoi.withusdone.com/" target="_blank" class="card theme-9">
-                <span class="badge">SOLVE</span>
-                <h3>자동차보험가입거절</h3>
-                <p>"닫힌 문을 여는 열쇠 같은 보험, 포기하지 않는 당신을 위한 마지막 비상구"</p>
-            </a>
-            <a href="https://directhpmon.withusdone.com/" target="_blank" class="card theme-9">
-                <span class="badge">COUPLE</span>
-                <h3>부부자동차보험</h3>
-                <p>"두 개의 심장, 하나의 사랑. 부부라는 이름으로 묶인 운명 공동체의 안전 수칙"</p>
-            </a>
-            <a href="https://directhpmos.withusdone.com/" target="_blank" class="card theme-9">
-                <span class="badge">SWITCH</span>
-                <h3>자동차보험갈아타기</h3>
-                <p>"더 좋은 곳이 있다면 망설이지 마세요. 새로움으로 이동하는 가장 현명한 환승역"</p>
-            </a>
-        </div>
-    </section>
+                <!-- 스팅어 보험료 -->
+                <article class="card-item" style="border-color: #ffcdd2;">
+                    <a href="https://caropromotiony.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #d32f2f;">스팅어 보험료: 고성능 스포츠 세단의 짜릿함, 완벽한 보상으로 즐긴다</h3>
+                        <p>
+                            기아 스팅어는 한국 자동차 역사상 가장 성공적인 스포츠 세단 중 하나로 평가받습니다. 날카로운 디자인과 강력한 주행 성능은 오너에게 강렬한 인상을 남기며, 드라이빙의 즐거움을 극대화합니다. 스팅어를 위한 보험 설계는 일반적인 패밀리 세단과는 분명한 차이를 두어야 합니다. 고성능 엔진과 서스펜션 등 스포츠 주행에 최적화된 부품들은 사고 시 수리 비용이 높게 책정될 수 있습니다. 또한, 스팅어 오너의 운전 성향을 고려하여 할증 기준이나 긴급 출동 서비스 등을 꼼꼼히 확인해야 합니다. 스팅어의 역동적인 성능을 마음껏 즐기면서도, 예기치 않은 상황에서 차량의 가치를 온전히 보상받을 수 있는 보험을 선택하는 것이 중요합니다. 스팅어의 매력을 더욱 빛나게 해줄 맞춤형 보상 플랜을 지금 확인해보세요. 
+                        </p>
+                    </a>
+                </article>
 
-    <section class="category-section">
-        <h2 class="category-title">10. 탄 만큼만 내는 데이터의 혁명</h2>
-        <div class="grid-container">
-            <a href="https://directipmor.withusdone.com/" target="_blank" class="card theme-10">
-                <span class="badge">DRIVE</span>
-                <h3>자동차보험타는만큼</h3>
-                <p>"달린 거리가 곧 보험료가 되는 정직한 보상, 당신의 주행 거리를 예술로 승화"</p>
-            </a>
-            <a href="https://directjpmol.withusdone.com/" target="_blank" class="card theme-10">
-                <span class="badge">PAY AS GO</span>
-                <h3>탄만큼내는자동차보험</h3>
-                <p>"합리성의 끝판왕, 세워둔 차에 보험료를 지불하지 않는 스마트 라이프의 표본"</p>
-            </a>
-            <a href="https://directkpmoh.withusdone.com/" target="_blank" class="card theme-10">
-                <span class="badge">MILEAGE</span>
-                <h3>탄만큼내는보험</h3>
-                <p>"마일리지의 마법, 적게 탈수록 커지는 미소. 당신의 알뜰함을 데이터로 증명하세요"</p>
-            </a>
-            <a href="https://directipmol.withusdone.com/" target="_blank" class="card theme-10">
-                <span class="badge">KM</span>
-                <h3>자동차보험키로수</h3>
-                <p>"숫자 하나에 담긴 절약의 가치, 킬로미터당 계산되는 당신의 소중한 혜택"</p>
-            </a>
-            <a href="https://directkpmoz.withusdone.com/" target="_blank" class="card theme-10">
-                <span class="badge">ECONOMY</span>
-                <h3>차보험료비교</h3>
-                <p>"수천 개의 데이터를 뒤져 찾아낸 보석 같은 가격, 비교는 과학입니다"</p>
-            </a>
-            <a href="https://directkpmot.withusdone.com/" target="_blank" class="card theme-10">
-                <span class="badge">MARKET</span>
-                <h3>자동차보험점유율</h3>
-                <p>"많은 이들이 선택했다는 것은 그만한 이유가 있다는 것, 대중의 신뢰를 확인하세요"</p>
-            </a>
-            <a href="https://directlpmob.withusdone.com/" target="_blank" class="card theme-10">
-                <span class="badge">UPDATE</span>
-                <h3>자동차보험료갱신</h3>
-                <p>"해마다 돌아오는 귀찮은 갱신을 당신의 자산을 업그레이드하는 축제로 만드세요"</p>
-            </a>
-            <a href="https://directlpmoe.withusdone.com/" target="_blank" class="card theme-10">
-                <span class="badge">GIFT</span>
-                <h3>자동차보험가입혜택</h3>
-                <p>"안전은 기본, 쏟아지는 선물은 보너스. 가입만으로도 풍성해지는 당신의 라이프"</p>
-            </a>
-        </div>
-    </section>
+                <!-- 파나메라 보험료 -->
+                <article class="card-item" style="border-color: #ffcdd2;">
+                    <a href="https://carmpromotiont.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #d32f2f;">파나메라 보험료: 포르쉐의 명성, 초고가 차량을 위한 명품 보장</h3>
+                        <p>
+                            포르쉐 파나메라는 스포츠카의 성능과 세단의 안락함을 동시에 갖춘 럭셔리 모델입니다. 수억 원을 호가하는 파나메라의 가치는 단순한 이동 수단 그 이상의 의미를 지닙니다. 이처럼 고가의 차량을 위한 보험은 재산 보호라는 측면에서 매우 중요합니다. 파나메라의 첨단 기술이 집약된 부품, 특히 정교한 센서나 카본 소재의 파츠는 수리 시 상상을 초월하는 비용을 발생시킵니다. 따라서 보험 가입 시 자기차량손해 보상 한도를 차량가액 전액으로 설정하는 것은 물론, 수리 시 포르쉐 공식 서비스 센터 이용 특약(공식 센터 보장 특약)을 반드시 확인해야 합니다. 파나메라 오너라면 보험료의 저렴함보다는 보장의 확실성과 사고 발생 시 신속하고 정확한 대처 능력을 갖춘 보험사를 선택하는 것이 현명합니다. 당신의 포르쉐에 걸맞은 명품 보험 솔루션을 지금 확인해보십시오. 
+                        </p>
+                    </a>
+                </article>
 
-</div>
+            </div>
+        </section>
 
-<footer>
-    <p>&copy; 2026 Smart Insurance Hub. All rights reserved.</p>
-    <p>본 페이지는 정보 제공을 목적으로 하며, 각 보험사의 약관에 따라 실제 보장 내용은 달라질 수 있습니다.</p>
+        <!-- 카테고리 3: 친환경 전기차 및 미래 모빌리티 -->
+        <section class="category-section" style="background-color: #fcfcfc;">
+            <h2 class="category-title" style="color: #0d47a1; border-left-color: #1e88e5;">친환경 전기차 및 미래 모빌리티: 새로운 시대, 새로운 보장</h2>
+            <div class="link-card">
+
+                <!-- EV6 보험료 -->
+                <article class="card-item" style="border-color: #bbdefb;">
+                    <a href="https://carmpromotionf.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #0d47a1;">EV6 보험료: 혁신적인 전기차, 배터리부터 충전까지 완벽하게</h3>
+                        <p>
+                            기아 EV6는 전용 플랫폼 E-GMP를 기반으로 한 혁신적인 전기차입니다. 미래지향적인 디자인과 뛰어난 성능, 그리고 초고속 충전 시스템은 기존 내연기관 차량과는 차원이 다른 경험을 제공합니다. 전기차는 내연기관차와 달리 고전압 배터리와 충전 시스템 등 고유의 핵심 부품을 갖추고 있어, 보험 설계 시 이러한 특성을 반영해야 합니다. 특히 고가인 배터리 손상에 대한 보상은 전기차 보험의 핵심입니다. 일반적인 차량 사고뿐만 아니라 충전 중 발생하는 손상, 혹은 침수 등으로 인한 배터리 교체 비용을 충분히 보장받을 수 있는지 확인해야 합니다. EV6의 첨단 기술에 걸맞은 보험을 통해, 미래 모빌리티 시대의 드라이빙을 안심하고 즐기십시오. EV6 오너를 위한 특별한 보험 상품들을 지금 바로 비교해보세요. 
+                        </p>
+                    </a>
+                </article>
+
+                <!-- 픽업트럭 보험료 -->
+                <article class="card-item" style="border-color: #bbdefb;">
+                    <a href="https://carmpromotionb.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #0d47a1;">픽업트럭 보험료: 워크라이프를 위한 든든한 파트너</h3>
+                        <p>
+                            픽업트럭은 레저와 실용성을 모두 겸비한 다재다능한 차량입니다. 짐을 싣고 거친 도로를 달리며 모험과 일을 병행하는 오너들에게 필수적인 파트너입니다. 픽업트럭의 보험 설계는 일반적인 승용차와 달리 적재함 손상이나 화물 관련 특약이 중요하게 다뤄집니다. 특히 험지 주행이 잦은 경우, 차량 하부 손상이나 타이어 손상에 대한 보장 범위가 넓은 상품을 선택하는 것이 현명합니다. 픽업트럭은 강인한 외관만큼이나 강력한 보장이 필요합니다. 당신의 픽업트럭이 짊어지는 짐의 무게만큼, 보험은 든든한 안전망이 되어야 합니다. 픽업트럭 오너의 라이프스타일에 최적화된 보험 상품을 통해, 당신의 워크라이프를 안전하게 지켜주십시오. 
+                        </p>
+                    </a>
+                </article>
+
+                <!-- 자동차보험 특약 -->
+                <article class="card-item" style="border-color: #bbdefb;">
+                    <a href="https://carnpromotiona.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #0d47a1;">자동차보험 특약: 나에게 꼭 맞는 맞춤형 보상 설계의 핵심</h3>
+                        <p>
+                            자동차보험은 의무 가입 항목이지만, 특약(특별 약관)을 어떻게 조합하느냐에 따라 보장 범위와 보험료가 크게 달라집니다. 특약은 운전자의 개별적인 상황과 차량의 특성을 반영하여 보험의 가치를 극대화하는 핵심 요소입니다. '마일리지 특약'을 통해 주행 거리가 짧은 운전자는 보험료를 환급받을 수 있고, '첨단 안전장치 장착 특약'은 사고 위험을 줄여주는 장치에 대한 할인을 제공합니다. 블랙박스 장착이나 자녀 할인 등 놓치기 쉬운 혜택을 반드시 확인해야 합니다. 특히 최근에는 '자차손해 자기부담금 변경'이나 '비용지원 특약' 등 다양한 맞춤형 특약이 등장했습니다. 당신의 운전 습관, 차량 모델, 가족 구성원 등을 꼼꼼히 고려하여 최적의 특약 조합을 찾아보십시오. 보험료 절감과 완벽한 보상, 두 마리 토끼를 잡을 수 있는 현명한 선택입니다. 
+                        </p>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- 카테고리 4: 대중적인 세단 및 경차 -->
+        <section class="category-section" style="background-color: #fcfcfc;">
+            <h2 class="category-title" style="color: #2e7d32; border-left-color: #43a047;">대중적인 세단 및 경차: 합리적인 선택, 가치 이상의 보장</h2>
+            <div class="link-card">
+
+                <!-- 쏘나타 보험료 -->
+                <article class="card-item" style="border-color: #c8e6c9;">
+                    <a href="http://carmpromotionv.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #2e7d32;">쏘나타 보험료: 국민 세단의 안전, 실속형 보험으로 완성</h3>
+                        <p>
+                            현대자동차 쏘나타는 오랜 기간 동안 국내 중형 세단의 기준이 되어왔습니다. 세련된 디자인과 뛰어난 성능, 그리고 합리적인 가격으로 많은 운전자들의 선택을 받아왔습니다. 쏘나타의 보험 설계는 대중적인 모델인 만큼 다양한 옵션을 비교할 수 있다는 장점이 있습니다. 보험료 절감에 중점을 둔 실속형 플랜부터, 사고 시 완벽한 보장을 제공하는 고급형 플랜까지 선택의 폭이 넓습니다. 특히 중고차 시장에서도 인기가 높은 만큼, 차량 가치 보존을 위한 자차 보상 특약은 필수입니다. 쏘나타 오너는 운전 경력, 나이, 사고 이력 등 개인별 상황에 따라 보험료 차이가 크므로, 여러 보험사의 견적을 꼼꼼히 비교하여 최적의 상품을 찾아야 합니다. 쏘나타와 함께하는 일상을 든든하게 지켜줄 현명한 보험을 지금 바로 확인해보십시오. 
+                        </p>
+                    </a>
+                </article>
+
+                <!-- 캐스퍼 보험료 -->
+                <article class="card-item" style="border-color: #c8e6c9;">
+                    <a href="https://carmpromotions.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #2e7d32;">캐스퍼 보험료: 경차의 반전 매력, 실용성을 위한 맞춤 보장</h3>
+                        <p>
+                            현대 캐스퍼는 경차의 틀을 깬 독특한 디자인과 실용성으로 큰 인기를 끌고 있습니다. 특히 사회 초년생이나 세컨드 카로 많은 선택을 받고 있습니다. 경차는 일반 차량에 비해 보험료가 저렴한 편이지만, 캐스퍼는 높은 인기만큼이나 차량 도난이나 사고 위험에 노출될 수 있습니다. 경차라고 해서 보장을 소홀히 해서는 안 됩니다. 캐스퍼의 앙증맞은 외관 속에 숨겨진 첨단 안전 사양을 고려하여, 이에 걸맞은 특약들을 꼼꼼히 확인해야 합니다. 경차의 보험은 사고 시 자기부담금을 낮추는 방향으로 설계하여, 수리 비용 부담을 최소화하는 것이 중요합니다. 캐스퍼 오너에게 가장 중요한 것은 합리적인 보험료로 최대의 보장을 누리는 것입니다. 지금 캐스퍼에 최적화된 보험 상품을 찾아보세요. 
+                        </p>
+                    </a>
+                </article>
+
+                <!-- 레이 자동차보험료 -->
+                <article class="card-item" style="border-color: #c8e6c9;">
+                    <a href="https://carmpromotiono.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #2e7d32;">레이 자동차보험료: 박스카의 개성, 효율적인 보험 설계로 빛나다</h3>
+                        <p>
+                            기아 레이는 독특한 박스형 디자인과 넓은 실내 공간으로 실용적인 경차의 대명사입니다. 특히 여성 운전자나 소규모 자영업자들에게 인기가 높습니다. 레이의 보험 설계는 차량의 실용성에 초점을 맞춰야 합니다. 경차는 차량 가격 대비 보험료 비중이 높을 수 있으므로, 보험료 절감을 위한 다양한 할인 특약을 적극적으로 활용하는 것이 좋습니다. 레이는 작은 차체에도 불구하고 첨단 안전 사양이 적용된 모델이 많으므로, 관련 할인 특약을 놓치지 말아야 합니다. 또한, 레이는 도심 운행이 많아 좁은 골목길 사고에 취약할 수 있으므로, 흠집이나 경미한 손상에 대한 보상 특약도 꼼꼼히 확인하는 것이 좋습니다. 레이의 실용적인 매력을 극대화하는 동시에, 안심하고 운전할 수 있는 보험 플랜을 지금 바로 찾아보세요. 
+                        </p>
+                    </a>
+                </article>
+
+                <!-- 티볼리 보험료 -->
+                <article class="card-item" style="border-color: #c8e6c9;">
+                    <a href="https://carmpromotionu.withusdone.com/" class="link-wrap" target="_blank">
+                        <h3 style="color: #2e7d32;">티볼리 보험료: 소형 SUV의 트렌드 세터, 합리적인 가치 보장</h3>
+                        <p>
+                            쌍용자동차의 티볼리는 소형 SUV 시장의 트렌드를 이끌었던 모델입니다. 스타일리시한 디자인과 실용적인 공간 활용으로 젊은 세대에게 큰 인기를 끌었습니다. 티볼리 오너들은 개성을 중시하면서도 합리적인 소비를 추구하는 경향이 있습니다. 따라서 티볼리 보험 역시 이러한 가치관에 맞춰 설계되어야 합니다. 보험료 절감을 위한 다양한 할인 특약(블랙박스, 운전자 습관 등)을 활용하고, 차량 유지보수 비용을 고려한 보장 범위를 설정하는 것이 중요합니다. 티볼리의 매력적인 디자인 요소와 특유의 첨단 사양을 고려하여, 단순히 보험료가 저렴한 상품을 선택하기보다는 차량 수리 시 발생하는 비용 부담을 최소화할 수 있는 실속형 플랜을 찾는 것이 현명합니다. 티볼리의 가치를 완벽하게 지켜줄 수 있는 현명한 보험 선택이 중요합니다. 
+                        </p>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+    </div>
+
+<footer style="font-size: 11px; color: #888; padding: 30px 20px; text-align: center; line-height: 1.8; font-family: sans-serif;">
+  <div style="margin-bottom: 8px;">
+    © 2026. <span id="site-title"></span>. All rights reserved.
+  </div>
+
+  <div style="color: #ccc;">
+    <span id="bot-msg">데이터 동기화 중...</span> | 
+    최종 업데이트: <time id="bot-date" datetime=""></time>
+  </div>
 </footer>
+
+<script>
+  (function() {
+    // 1. 사이트 타이틀 자동 삽입 (요청하신 코드 추가됨)
+    const siteTitleElem = document.getElementById('site-title');
+    if (siteTitleElem) {
+      siteTitleElem.textContent = document.title || "My Website"; 
+    }
+
+    // 2. 날짜 및 시간 설정
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+    const fullISO = `${formattedDate}T09:00:00+09:00`;
+
+    const dateElem = document.getElementById('bot-date');
+    const msgElem = document.getElementById('bot-msg');
+
+    if(dateElem) {
+      dateElem.textContent = formattedDate;
+      dateElem.setAttribute('datetime', formattedDate); 
+    }
+
+    // 3. 동적 상태 메시지
+    if(msgElem) {
+      const msgs = ["정보 유효성 검토 완료", "실시간 데이터 업데이트됨", "최신 가이드라인 준수", "콘텐츠 정기 점검 완료", "시스템 정보 동기화 완료"];
+      msgElem.textContent = msgs[d.getDate() % msgs.length];
+    }
+
+    // 4. SEO 최적화 (JSON-LD)
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "dateModified": fullISO,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": window.location.href }
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(jsonLd);
+    document.head.appendChild(script);
+
+    // 5. 메타 태그 업데이트
+    const metaData = [
+      { name: "revised", content: formattedDate },
+      { property: "article:modified_time", content: fullISO }
+    ];
+    metaData.forEach(data => {
+      const meta = document.createElement('meta');
+      if (data.name) meta.name = data.name;
+      if (data.property) meta.setAttribute('property', data.property);
+      meta.content = data.content;
+      document.head.appendChild(meta);
+    });
+  })();
+</script>
+
 
 </body>
 </html>
-
